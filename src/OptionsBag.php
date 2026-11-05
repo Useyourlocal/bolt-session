@@ -14,6 +14,7 @@ class OptionsBag extends ParameterBag implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return $this->has($offset);
@@ -22,6 +23,7 @@ class OptionsBag extends ParameterBag implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->get($offset);
@@ -30,6 +32,7 @@ class OptionsBag extends ParameterBag implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->set($offset, $value);
@@ -38,6 +41,7 @@ class OptionsBag extends ParameterBag implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         $this->remove($offset);
