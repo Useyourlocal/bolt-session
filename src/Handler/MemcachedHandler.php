@@ -32,6 +32,7 @@ class MemcachedHandler extends MemcachedSessionHandler implements LazyWriteHandl
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function updateTimestamp($sessionId, $data)
     {
         $this->getMemcached()->touch($this->prefix . $sessionId, time() + $this->ttl);

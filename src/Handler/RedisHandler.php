@@ -35,6 +35,7 @@ class RedisHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function read($sessionId)
     {
         if ($data = $this->redis->get($sessionId)) {
@@ -47,6 +48,7 @@ class RedisHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function destroy($sessionId)
     {
         $this->redis->del($sessionId);
@@ -57,6 +59,7 @@ class RedisHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function write($sessionId, $data)
     {
         $this->redis->setex($sessionId, $this->ttl, $data);
@@ -67,6 +70,7 @@ class RedisHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function updateTimestamp($sessionId, $data)
     {
         $this->redis->expire($sessionId, $this->ttl);

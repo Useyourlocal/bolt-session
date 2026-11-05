@@ -31,6 +31,7 @@ class DoctrineCacheHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function read($sessionId)
     {
         return $this->cache->fetch($sessionId) ?: '';
@@ -39,6 +40,7 @@ class DoctrineCacheHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function write($sessionId, $data)
     {
         return $this->cache->save($sessionId, $data, $this->ttl);
@@ -47,6 +49,7 @@ class DoctrineCacheHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function destroy($sessionId)
     {
         return $this->cache->delete($sessionId);

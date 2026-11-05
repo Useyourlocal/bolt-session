@@ -18,6 +18,7 @@ class MemcacheHandler extends MemcacheSessionHandler
      *
      * Don't close connection.
      */
+    #[\ReturnTypeWillChange]
     public function close()
     {
         return true;

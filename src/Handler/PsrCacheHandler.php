@@ -32,6 +32,7 @@ class PsrCacheHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function read($sessionId)
     {
         $item = $this->pool->getItem($sessionId);
@@ -42,6 +43,7 @@ class PsrCacheHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function write($sessionId, $data)
     {
         $item = $this->pool->getItem($sessionId);
@@ -55,6 +57,7 @@ class PsrCacheHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function destroy($sessionId)
     {
         return $this->pool->deleteItem($sessionId);

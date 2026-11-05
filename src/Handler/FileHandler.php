@@ -69,6 +69,7 @@ class FileHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function read($sessionId)
     {
         $file = $this->getSessionFileName($sessionId);
@@ -91,6 +92,7 @@ class FileHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function write($sessionId, $data)
     {
         $file = $this->getSessionFileName($sessionId);
@@ -115,6 +117,7 @@ class FileHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function updateTimestamp($sessionId, $data)
     {
         try {
@@ -126,6 +129,7 @@ class FileHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function destroy($sessionId)
     {
         $file = $this->getSessionFileName($sessionId);
@@ -144,6 +148,7 @@ class FileHandler extends AbstractHandler implements LazyWriteHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function gc($maxlifetime)
     {
         $finder = new Finder();

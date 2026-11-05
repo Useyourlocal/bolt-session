@@ -29,6 +29,7 @@ class FilesystemHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function read($sessionId)
     {
         try {
@@ -41,6 +42,7 @@ class FilesystemHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function write($sessionId, $data)
     {
         $this->directory->getFile($sessionId)->put($data);
@@ -49,6 +51,7 @@ class FilesystemHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function destroy($sessionId)
     {
         try {
@@ -60,6 +63,7 @@ class FilesystemHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function gc($maxlifetime)
     {
         if (!$this->directory->exists()) {

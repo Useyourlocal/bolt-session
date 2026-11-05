@@ -12,6 +12,7 @@ abstract class AbstractHandler implements \SessionHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function open($savePath, $sessionName)
     {
         return true;
@@ -20,6 +21,7 @@ abstract class AbstractHandler implements \SessionHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function close()
     {
         return true;
@@ -28,6 +30,7 @@ abstract class AbstractHandler implements \SessionHandlerInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function gc($maxlifetime)
     {
         return true;
